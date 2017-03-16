@@ -1,0 +1,38 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Вся база</title>
+</head>
+<body style="background-image: url(http://weblabfon.com/_ld/3/333_fabrik-len.jpg)">
+    <div>
+        <hr >
+        <table>
+            <caption><h2>Товары магазина Техноточка</h2></caption>
+            <tr><th>Название товара</th>
+                <th>        </th>
+                <th>Описание</th>
+                <th>Цена, грн</th>
+                <th>Дата добавелния<th>
+            </tr>
+            
+            @foreach (BDProject.Models.Product b in Model)
+            {
+            <tr>
+                <td><p>@b.prod_name</p></td>
+                <td><p><img src="@b.picture"/></p></td>
+                <td><p>@b.description</p></td>
+                <td><p>@b.price</p></td>
+                <td><p>@b.Date</p></td>
+            </tr>
+            }
+        </table>
+     
+    </div>
+</body>
+</html>

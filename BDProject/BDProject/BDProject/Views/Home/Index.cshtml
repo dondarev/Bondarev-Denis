@@ -1,0 +1,37 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+     <meta name="viewport" content="width=device-width" />
+    <title>Парсер</title>
+</head>
+ 
+<body style="background-image: url(http://weblabfon.com/_ld/3/333_fabrik-len.jpg)">
+    <div>
+      <a href="~/Home/All"><input type="submit" value="Просмотреть всю базу" /> </a>
+         <a href="~/Home/Add"><input type="submit" value="Обновить базу" /> </a>
+      <hr>
+          <form action="~/Home/Dinamic" method="post" >
+        <table>
+              <caption><h2>Список товаров</h2> </caption>
+            @foreach (var b in ViewBag.Products)
+            {
+                
+            <tr>
+                <td><p>@b.prod_name </p></td>
+                <td><p><img src="@b.picture"/></p></td>
+                <td><p>@b.description</p></td>
+                <td><p> <input type="hidden" name="prod_name" value="@b.prod_name" /></p></td>
+                <td><p> <input type="hidden" name="picture" value="@b.picture" /></p></td>
+                <td><p><input type ="submit" value ="Динамика изменения цены"/></p></td>
+            </tr>
+            }
+        </table>
+  </form>
+    </div>
+</body>
+</html>
